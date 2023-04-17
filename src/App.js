@@ -1,4 +1,5 @@
 import React, { Component }  from 'react';
+// import toDoListLogo from './images/todo-list-logo.png';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          To Do List - hahahaa
+          To Do List - lmao
         </p>
         <a
           className="App-link"
