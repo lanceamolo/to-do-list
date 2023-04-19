@@ -1,0 +1,29 @@
+#login {
+    padding-top: 5vh;
+}
+
+.login-input {
+    border: 3px solid #FCE145;
+    border-radius: 2px;
+    width: 60vw;
+    height: 5vh;
+    margin-bottom: 10px;
+}
+
+.login-input::placeholder {
+    color: black;
+    font-size: 22px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+
+.login-button {
+    background: #FCE145;
+    width: 30vw;
+    border: none;
+    border-radius: 2px;
+    height: 4vh;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
