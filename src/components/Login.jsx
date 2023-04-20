@@ -13,16 +13,14 @@ export const Login = () => {
     }
 
     return (
-        <div className='main-content'>
-            <div id='login'>
-                <img src={logo} id='logo' style={{ width: 300 }}/>
-                <form onSubmit={handleSubmit}>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Email' className='login-input' id='login-email'/><br/>
-                    <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Password' className='login-input' id='login-password' /><br/>
-                    <button className='login-button' type='submit'>Submit</button>
-                </form>
-            <button className='login-button'>Register</button>
-            </div>
+        <div id='login'>
+            <img src={logo} id='logo'/>
+            <form onSubmit={handleSubmit}>
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Email' className='login-input' id='login-email'/><br/>
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Password' className='login-input' id='login-password' /><br/>
+                <button className='login-button' type='submit'>Submit</button>
+            </form>
+        <button className='login-button'>Register</button>
         </div>
     )
 }
