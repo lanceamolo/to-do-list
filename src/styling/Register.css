@@ -1,0 +1,55 @@
+#register {
+    /* border: 1px solid black; */
+    position: relative;
+    top: 7vh;
+}
+
+#logo {
+    width: 25vw;
+}
+
+.register-input {
+    border: 3px solid #FCE145;
+    border-radius: 2px;
+    height: 5vh;
+    margin-bottom: 10px;
+    width: 25vw;
+}
+
+.register-input::placeholder {
+    color: black;
+    font-size: 22px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+
+.register-button {
+    background: #FCE145;
+    width: 14vw;
+    border: none;
+    border-radius: 2px;
+    height: 4vh;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#forgot-pass-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: translateY(-10px);
+}
+
+.forgot-pass-line {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+}
+
+.forgot-pass {
+    margin-left:  3px;
+    margin-right: 3px;
+    font-size: 12px;
+}

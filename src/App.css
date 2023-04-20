@@ -4,8 +4,12 @@
   font-family: 'Poppins';
 }
 
-.App {
+body {
   display: flex;
   text-align: center;
   justify-content: center;
+}
+
+button {
+  cursor: pointer;
 }

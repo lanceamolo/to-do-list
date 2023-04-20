@@ -33,3 +33,23 @@
     margin-bottom: 10px;
     font-size: 18px;
 }
+
+#forgot-pass-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: translateY(-10px);
+}
+
+.forgot-pass-line {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+}
+
+.forgot-pass {
+    margin-left:  3px;
+    margin-right: 3px;
+    font-size: 12px;
+}
