@@ -2,12 +2,10 @@ import React from "react";
 
 
 export const TaskDetails = () => {
-    // something
-    
-    
     return (
         <div>
-
+            <button>Delete</button>
+            <button>Edit</button>
         </div>
     );
-}
+} 
