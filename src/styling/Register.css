@@ -1,14 +1,14 @@
-#login {
+#register {
     /* border: 1px solid black; */
     position: relative;
-    top: 10vh;
+    top: 7vh;
 }
 
 #logo {
     width: 25vw;
 }
 
-.login-input {
+.register-input {
     border: 3px solid #FCE145;
     border-radius: 2px;
     height: 5vh;
@@ -16,7 +16,7 @@
     width: 25vw;
 }
 
-.login-input::placeholder {
+.register-input::placeholder {
     color: black;
     font-size: 22px;
     position: relative;
@@ -24,7 +24,7 @@
     left: 10px;
 }
 
-.login-button {
+.register-button {
     background: #FCE145;
     width: 14vw;
     border: none;
