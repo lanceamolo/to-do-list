@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export const TaskDetails = ({ task, onEdit, onDelete, onGoBack }) => {
+export const TaskDetails = ({ task, onEdit, onDelete, onGoBack}) => {
   const [editedTaskName, setEditedTaskName] = useState(task.name);
   const [editedTaskDescription, setEditedTaskDescription] = useState(
     task.description
   );
   const [editedTaskTime, setEditedTaskTime] = useState(task.time);
+  
+  const navigate = useNavigate();
+
 
   const handleEdit = (event) => {
     event.preventDefault();
@@ -23,6 +27,11 @@ export const TaskDetails = ({ task, onEdit, onDelete, onGoBack }) => {
     event.preventDefault();
     onDelete(task.id);
   };
+
+  const handleGoBack = () => {
+    navigate(-1);
+  }
+
 
   return (
     <div>
@@ -58,7 +67,7 @@ export const TaskDetails = ({ task, onEdit, onDelete, onGoBack }) => {
         <br />
         <button type="submit">Save</button>
         <button onClick={handleDelete}>Delete</button>
-        <button onClick={onGoBack}>Go Back</button>
+        <button onClick={handleGoBack}>Go Back</button>
       </form>
     </div>
   );

@@ -7,21 +7,36 @@ import { TaskDetails } from "./components/TaskDetails.jsx";
 import "./App.css";
 
 function App() {
-  const [task, setTask] = useState(null);
+  const [task, setTask] = useState({
+    name: "",
+    description: "",
+    id: "",
+    time: "",
+  });
 
+  const [tasks, setTasks] = useState([]);
+  
   const handleEdit = (editedTask) => {
     // code to update the task in the list or database
-    console.log("edited task:", editedTask);
+    setTasks((prevTasks) => {
+      return prevTasks.map((t) => {
+        if (t.id === editedTask.id) {
+          return {
+            ...t,
+            name: editedTask.name,
+            description: editedTask.description,
+            time: editedTask.time,
+          };
+        }
+        // if id's don't match return the task unchanged
+        return t;
+      });
+    });
   };
 
   const handleDelete = (taskId) => {
     // code to delete the task from the list or database
-    console.log("deleted task id:", taskId);
-  };
-
-  const handleGoBack = () => {
-    // code to navigate back to the previous page
-    console.log("go back");
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
 
@@ -29,7 +44,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
+        <Route
+          path="/home"
+          element={<Home tasks={tasks} setTasks={setTasks} />}
+        />
         <Route path="/create" element={<Create />} />
         <Route
           path="/task/:taskId"
@@ -38,7 +56,6 @@ function App() {
               task={task}
               onEdit={handleEdit}
               onDelete={handleDelete}
-              onGoBack={handleGoBack}
             />
           }
         />
