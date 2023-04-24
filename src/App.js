@@ -11,7 +11,6 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Login />}/>
         <Route path='/register' element={<Register />} /> 
-        {/* <Route path='/home' element={<Home/>} /> */}
       </Routes>
     </BrowserRouter>
   );
