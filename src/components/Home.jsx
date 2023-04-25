@@ -15,12 +15,39 @@ export const Home = () => {
     {
       id: 2,
       name: "Wash car"
+    },    {
+      id: 1,
+      name: "Clean kitchen"
+    },
+    {
+      id: 2,
+      name: "Wash car"
+    },
+    {
+      id: 1,
+      name: "Clean kitchen"
+    },
+    {
+      id: 2,
+      name: "Wash car"
     }
   ];
   const completedTasks = [
     {
       id: 1,
       name: "Clean room"
+    },
+    {
+      id: 2,
+      name: "Wash car"
+    },
+    {
+      id: 1,
+      name: "Clean kitchen"
+    },
+    {
+      id: 2,
+      name: "Wash car"
     }
   ];
 
@@ -41,7 +68,7 @@ export const Home = () => {
     return (
       <li className="active-li" key={task.id}>
         <label className="active-name">
-          <Link to={`/taskDetails/${task.id}`}>{task.name}</Link>
+          <Link to={`/taskDetails/${task.id}`}>- {task.name}</Link>
         </label>
         <input className='active-checkbox' type="checkbox" id={task.id} onChange={handleCheck} />
       </li>
@@ -49,11 +76,11 @@ export const Home = () => {
   });
 
   const completedTaskList = completedTasks.map((task) => (
-    <li key={task.id}>
-      <label>
-        {task.name}
-        <input type="checkbox" checked disabled />
+    <li className="completed-li" key={task.id}>
+      <label className="completed-name">
+        - {task.name}
       </label>
+      <input className='completed-checkbox' type="checkbox" checked />
     </li>
   ));
 
@@ -70,10 +97,10 @@ export const Home = () => {
   // home w/ tasks
   return (
     <div id="home">
-      <h1>Things to do:</h1>
-      <Link to="/create">+</Link>
-      <ul>{activeTaskList}</ul>
-      <h2>Completed tasks:</h2>
+      <Link to="/create"><button id="add-task">+ Add Task</button></Link>
+      <h1 id="home-headline">Things to do</h1>
+      <ul id="active-list">{activeTaskList}</ul>
+      <h2 id="home-completed">Completed tasks</h2>
       <ul>{completedTaskList}</ul>
     </div>
   );
