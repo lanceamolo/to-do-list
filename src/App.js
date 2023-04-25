@@ -15,30 +15,6 @@ function App() {
   });
 
   const [tasks, setTasks] = useState([]);
-  
-  const handleEdit = (editedTask) => {
-    // code to update the task in the list or database
-    setTasks((prevTasks) => {
-      return prevTasks.map((t) => {
-        if (t.id === editedTask.id) {
-          return {
-            ...t,
-            name: editedTask.name,
-            description: editedTask.description,
-            time: editedTask.time,
-          };
-        }
-        // if id's don't match return the task unchanged
-        return t;
-      });
-    });
-  };
-
-  const handleDelete = (taskId) => {
-    // code to delete the task from the list or database
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
-  };
-
 
   return (
     <BrowserRouter>
@@ -49,16 +25,7 @@ function App() {
           element={<Home tasks={tasks} setTasks={setTasks} />}
         />
         <Route path="/create" element={<Create />} />
-        <Route
-          path="/task/:taskId"
-          element={
-            <TaskDetails
-              task={task}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-            />
-          }
-        />
+        <Route path="/task/:taskId" element={<TaskDetails task={task} setTasks={setTasks} />} />
       </Routes>
     </BrowserRouter>
   );
