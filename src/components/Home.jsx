@@ -1,9 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import '../styling/Home.css';
 
-export const Home = ({tasks, setTasks}) => {
-  // const [tasks, setTasks] = useState([]);
-  const [completedTasks, setCompletedTasks] = useState([]);
+export const Home = () => {
+  const [setTasks] = useState([]);
+  const [setCompletedTasks] = useState([]);
+
+  // temp dummy data
+  const tasks = [
+    {
+      id: 1,
+      name: "Clean kitchen"
+    },
+    {
+      id: 2,
+      name: "Wash car"
+    }
+  ];
+  const completedTasks = [
+    {
+      id: 1,
+      name: "Clean room"
+    }
+  ];
 
   const handleCheck = (event) => {
     const taskId = event.target.id;
@@ -20,11 +39,11 @@ export const Home = ({tasks, setTasks}) => {
 
   const activeTaskList = tasks.map((task) => {
     return (
-      <li key={task.id}>
-        <label>
-          <input type="checkbox" id={task.id} onChange={handleCheck} />
+      <li className="active-li" key={task.id}>
+        <label className="active-name">
           <Link to={`/taskDetails/${task.id}`}>{task.name}</Link>
         </label>
+        <input className='active-checkbox' type="checkbox" id={task.id} onChange={handleCheck} />
       </li>
     );
   });
@@ -32,8 +51,8 @@ export const Home = ({tasks, setTasks}) => {
   const completedTaskList = completedTasks.map((task) => (
     <li key={task.id}>
       <label>
-        <input type="checkbox" checked disabled />
         {task.name}
+        <input type="checkbox" checked disabled />
       </label>
     </li>
   ));
@@ -50,7 +69,7 @@ export const Home = ({tasks, setTasks}) => {
 
   // home w/ tasks
   return (
-    <div>
+    <div id="home">
       <h1>Things to do:</h1>
       <Link to="/create">+</Link>
       <ul>{activeTaskList}</ul>

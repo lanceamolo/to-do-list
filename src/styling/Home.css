@@ -1,0 +1,20 @@
+#home {
+    /* border: 1px solid black; */
+    position: relative;
+    top: 10vh;
+    width: 80vw;
+}
+
+.active-li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.active-name {
+    font-size: 20px;
+}
+
+.active-checkbox {
+    width: 5vw;
+}
+
