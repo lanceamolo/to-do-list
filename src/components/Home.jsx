@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const Home = ({tasks, setTasks}) => {
+export const Home = ({ tasks, setTasks }) => {
   // const [tasks, setTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
 
