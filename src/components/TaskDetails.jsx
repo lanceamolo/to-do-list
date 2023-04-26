@@ -20,7 +20,7 @@ export const TaskDetails = ({ task, setTasks }) => {
             time: editedTask.time,
           };
         }
-        // if id's don't match return the task unchanged
+        // if id's don't match, return the task unchanged
         return t;
       });
     });

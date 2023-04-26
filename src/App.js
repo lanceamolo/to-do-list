@@ -21,13 +21,16 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route path='/register' element={<Register />} /> 
+        <Route path="/register" element={<Register />} />
         <Route
           path="/home"
           element={<Home tasks={tasks} setTasks={setTasks} />}
         />
         <Route path="/create" element={<Create />} />
-        <Route path="/task/:taskId" element={<TaskDetails task={task} setTasks={setTasks} />} />
+        <Route
+          path="/task/:taskId"
+          element={<TaskDetails task={task} setTasks={setTasks} />}
+        />
       </Routes>
     </BrowserRouter>
   );
