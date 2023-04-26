@@ -1,37 +1,42 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const TaskDetails = ({ task, onEdit, onDelete, onGoBack}) => {
+export const TaskDetails = ({ task, setTasks }) => {
   const [editedTaskName, setEditedTaskName] = useState(task.name);
   const [editedTaskDescription, setEditedTaskDescription] = useState(
     task.description
   );
   const [editedTaskTime, setEditedTaskTime] = useState(task.time);
-  
+
+  const handleEdit = (editedTask) => {
+    // code to update the task in the list or database
+    setTasks((prevTasks) => {
+      return prevTasks.map((t) => {
+        if (t.id === editedTask.id) {
+          return {
+            ...t,
+            name: editedTask.name,
+            description: editedTask.description,
+            time: editedTask.time,
+          };
+        }
+        // if id's don't match return the task unchanged
+        return t;
+      });
+    });
+  };
+
+  const handleDelete = (taskId) => {
+    // code to delete the task from the list or database
+
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+  };
+
   const navigate = useNavigate();
-
-
-  const handleEdit = (event) => {
-    event.preventDefault();
-
-    const editedTask = {
-      id: task.id,
-      name: editedTaskName,
-      description: editedTaskDescription,
-      time: editedTaskTime,
-    };
-    onEdit(editedTask);
-  };
-
-  const handleDelete = (event) => {
-    event.preventDefault();
-    onDelete(task.id);
-  };
 
   const handleGoBack = () => {
     navigate(-1);
-  }
-
+  };
 
   return (
     <div>
