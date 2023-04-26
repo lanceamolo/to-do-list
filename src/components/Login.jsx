@@ -21,7 +21,8 @@ export const Login = () => {
 
     return (
         <div id='login'>
-            <img src={logo} id='logo'/>
+            {/* <img src={logo} id='logo'/> */}
+            <h1 className='app-headline'>To Do List</h1>
             <form onSubmit={handleSubmit}>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Email' className='login-input' id='login-email'/><br/>
                 <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Password' className='login-input' id='login-password' /><br/>

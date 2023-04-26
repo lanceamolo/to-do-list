@@ -1,11 +1,15 @@
 #register {
     /* border: 1px solid black; */
     position: relative;
-    top: 7vh;
+    top: 30vh;
+    width: 50vw;
+    height: 70vh;
 }
 
-#logo {
-    width: 25vw;
+.app-headline {
+    width: 50vw;
+    height: 20vh;
+    font-size: 5vw;
 }
 
 .register-input {
@@ -25,7 +29,7 @@
 }
 
 .register-button {
-    background: #FCE145;
+    background: white;
     width: 14vw;
     border: none;
     border-radius: 2px;

@@ -23,7 +23,7 @@ export const Register = () => {
     return (
         <div className='main-content'>
             <div id='register'>
-                <img src={logo} id='logo'/>
+            <h1 className='app-headline'>To Do List</h1>
                 <form onSubmit={handleSubmit}>
                     <input value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Email' className='register-input' id='register-email' /><br/>
                     <input value={name} onChange={(e) => setName(e.target.value)} type='name' placeholder='Name' className='register-input' id='register-name'/><br/>
