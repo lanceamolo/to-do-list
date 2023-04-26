@@ -8,6 +8,10 @@ body {
   display: flex;
   text-align: center;
   justify-content: center;
+  background-image: url("./images/todo-list-bg.png");
+  background-position: 50% 15%;
+  background-size: 69vw 115vh;
+  background-repeat: no-repeat;
 }
 
 button {

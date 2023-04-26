@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from '../images/todo-list-logo.png';
 import '../styling/Home.css';
 
 export const Home = () => {
@@ -40,35 +41,27 @@ export const Home = () => {
     {
       id: 2,
       name: "Wash car"
-    },
-    {
-      id: 1,
-      name: "Clean kitchen"
-    },
-    {
-      id: 2,
-      name: "Wash car"
     }
   ];
 
   const handleCheck = (event) => {
-    const taskId = event.target.id;
-    const foundTask = tasks.find((task) => task.id === taskId);
+    // const taskId = event.target.id;
+    // const foundTask = tasks.find((task) => task.id === taskId);
 
-    // move foundtask into completed list
-    setCompletedTasks((prevState) => [...prevState, foundTask]);
+    // // move foundtask into completed list
+    // setCompletedTasks((prevState) => [...prevState, foundTask]);
 
-    // remove foundTask from the original task array
-    setTasks((prevState) =>
-      prevState.filter((foundTask) => foundTask.id !== taskId)
-    );
+    // // remove foundTask from the original task array
+    // setTasks((prevState) =>
+    //   prevState.filter((foundTask) => foundTask.id !== taskId)
+    // );
   };
 
   const activeTaskList = tasks.map((task) => {
     return (
       <li className="active-li" key={task.id}>
         <label className="active-name">
-          <Link to={`/taskDetails/${task.id}`}>- {task.name}</Link>
+          <Link to={`/taskDetails/${task.id}`}>{task.name}</Link>
         </label>
         <input className='active-checkbox' type="checkbox" id={task.id} onChange={handleCheck} />
       </li>
@@ -78,7 +71,7 @@ export const Home = () => {
   const completedTaskList = completedTasks.map((task) => (
     <li className="completed-li" key={task.id}>
       <label className="completed-name">
-        - {task.name}
+        {task.name}
       </label>
       <input className='completed-checkbox' type="checkbox" checked />
     </li>
@@ -96,12 +89,14 @@ export const Home = () => {
 
   // home w/ tasks
   return (
-    <div id="home">
+    <div id="home-content">
       <Link to="/create"><button id="add-task">+ Add Task</button></Link>
-      <h1 id="home-headline">Things to do</h1>
-      <ul id="active-list">{activeTaskList}</ul>
-      <h2 id="home-completed">Completed tasks</h2>
-      <ul>{completedTaskList}</ul>
+      <div id="main-list">
+        <h1 id="home-headline">Things to do</h1>
+        <ul id="active-list">{activeTaskList}</ul>
+        <h2 id="home-completed">Completed tasks</h2>
+        <ul>{completedTaskList}</ul>
+      </div>
     </div>
   );
 };

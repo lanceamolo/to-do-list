@@ -1,9 +1,16 @@
-#home {
+#home-content {
     /* border: 1px solid black; */
     position: relative;
-    top: 15vh;
+    top: 12vh;
     width: 50vw;
-    height: 85vh;
+    height: 70vh;
+}
+
+#main-list {
+    overflow: scroll;
+    width: 49vw;
+    height: 71vh;
+    /* border: 1px solid black; */
 }
 
 
@@ -11,10 +18,11 @@
     width: 10vw;
     height: 5vh;
     text-decoration: none;
-    border: none;
+    border: 2px solid black;
     border-radius: 2px;
     position: relative;
     left: 20vw;
+    bottom: 2vh;
     background: #FCE145;
     font-size: 1.4vw;
 }
@@ -48,6 +56,10 @@ input[type=checkbox] {
     position: relative;
     left: 2vw;
     color: black;
+}
+
+.completed-name {
+    text-decoration: line-through;
 }
 
 .active-checkbox, .completed-checkbox {
