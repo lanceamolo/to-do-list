@@ -42,8 +42,7 @@ a {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1vh;
-    text-decoration: none;
-    overflow: none;
+    
 }
 
 input[type=checkbox] {
@@ -52,10 +51,15 @@ input[type=checkbox] {
 }
 
 .active-name, .completed-name {
-    font-size: 20px;
+    font-size: 2vw;
     position: relative;
     left: 2vw;
     color: black;
+    border: 1px solid black;
+    width: 41vw;
+    text-align: left;
+    /* white-space: nowrap;
+    overflow: scroll; */
 }
 
 .completed-name {

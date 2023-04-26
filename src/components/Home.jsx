@@ -11,7 +11,7 @@ export const Home = () => {
   const tasks = [
     {
       id: 1,
-      name: "Clean kitchen"
+      name: "Clean kitchen Clean kitchen Clean kitchen Clean kitchen"
     },
     {
       id: 2,
@@ -35,6 +35,21 @@ export const Home = () => {
   ];
   const completedTasks = [
     {
+      id: 1,
+      name: "Clean room"
+    },
+    {
+      id: 2,
+      name: "Wash car"
+    },
+    {
+      id: 1,
+      name: "Clean room"
+    },
+    {
+      id: 2,
+      name: "Wash car"
+    },    {
       id: 1,
       name: "Clean room"
     },
